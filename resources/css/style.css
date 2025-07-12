@@ -1,0 +1,7 @@
+.height-custom  {
+    min-height: 60vh; 
+}
+.collapse {
+    visibility: visible !important;
+}
+
