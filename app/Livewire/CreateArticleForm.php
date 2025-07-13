@@ -37,4 +37,13 @@ class CreateArticleForm extends Component
     {
         return view('livewire.create-article-form');
     }
+
+    public function cleanForm()
+{
+    $this->title = '';
+    $this->description = '';
+    $this->price = '';
+    $this->category = null;
+}
+
 }

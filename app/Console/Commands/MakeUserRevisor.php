@@ -8,32 +8,36 @@ use Illuminate\Console\Command;
 class MakeUserRevisor extends Command
 {
     /**
-     * The name and signature of the console command.
+     * La signature del comando Artisan (con lo spazio corretto!)
      *
      * @var string
      */
-    protected $signature = 'app:make-user-revisor{email}';
+    protected $signature = 'app:make-user-revisor {email}';
 
     /**
-     * The console command description.
+     * La descrizione del comando.
      *
      * @var string
      */
     protected $description = 'Rende un utente revisore';
 
     /**
-     * Execute the console command.
+     * Esegui il comando.
      */
     public function handle()
     {
-        $user = User::where('email', $this->argument('email'))->first();
-        if(!$user)
-        {
-            $this->error('Utente non trovato');
+        $email = $this->argument('email');
+
+        $user = User::where('email', $email)->first();
+
+        if (!$user) {
+            $this->error("Utente con email {$email} non trovato.");
             return;
         }
-        $user->is_revisor =true;
+
+        $user->is_revisor = true;
         $user->save();
-        $this->info("L'utente{user->name} è ora revisore");
+
+        $this->info("✅ L'utente {$user->name} è ora un revisore!");
     }
 }

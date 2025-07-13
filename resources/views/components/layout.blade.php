@@ -10,7 +10,7 @@
     <title>Presto</title>
 </head>
 <body>
-    <x-navbar />
+    <x-navbar :categories="$categories" />
 
     <div class="min-vh-100">
         {{$slot}}

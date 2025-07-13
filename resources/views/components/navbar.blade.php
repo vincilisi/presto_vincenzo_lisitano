@@ -27,7 +27,7 @@
 
         {{-- Categoria Dropdown --}}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button"
+          <a class="nav-link dropdown-toggle" href="" role="button"
              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categoria
           </a>
