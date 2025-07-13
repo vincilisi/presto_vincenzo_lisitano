@@ -9,8 +9,8 @@
         </div>
         <div class="row justify-content-center align-items-center height-custom">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{{ route('register'}}" class="bg-body-tertiary shadow rounded p-5">
-                    @csfr
+                <form method="POST" action="{{ route('register')}}" class="bg-body-tertiary shadow rounded p-5">
+                    @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">Nome</label>
                         <input type="text" class="form-control" id="name" name="name">

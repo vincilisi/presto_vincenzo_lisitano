@@ -9,7 +9,7 @@
         </div>
         <div class="row justify-content-center align-items-center height-custom">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{{ route('login'}}" class="bg-secondary-subtle shadow rounder p-5">
+                <form method="POST" action="{{ route('login')}}" class="bg-secondary-subtle shadow rounder p-5">
                     @csrf
                     <div class="mb-3">
                         <label for="loginEmail" class="form-label">Indirizzo Email</label>
