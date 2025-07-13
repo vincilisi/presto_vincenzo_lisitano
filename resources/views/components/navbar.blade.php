@@ -13,18 +13,22 @@
 
         {{-- Home --}}
         <li class="nav-item">
-          <a class="nav-link active" href="{{ route('homepage') }}">Home</a>
+          <a class="nav-link {{ request()->routeIs('homepage') ? 'active' : '' }}" href="{{ route('homepage') }}">
+            Home
+          </a>
         </li>
 
         {{-- Articoli --}}
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('article.index') }}">Articoli</a>
+          <a class="nav-link {{ request()->routeIs('article.index') ? 'active' : '' }}" href="{{ route('article.index') }}">
+            Articoli
+          </a>
         </li>
 
         {{-- Categoria Dropdown --}}
         <li class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle"
-             role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button"
+             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categoria
           </a>
           <ul class="dropdown-menu">
@@ -46,19 +50,20 @@
         @auth
           @if (Auth::user()->is_revisor)
             {{-- Revisore --}}
-            <li class="nav-item">
-              <a class="nav-link btn btn-outline-success btn-sm position-relative"
-                 href="{{ route('revisor.index') }}">Zona Revisore</a>
-                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            <li class="nav-item position-relative">
+              <a class="nav-link btn btn-outline-success btn-sm" href="{{ route('revisor.index') }}">
+                Zona Revisore
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                   {{ \App\Models\Article::toBeRevisedCount() }}
-                 </span>
+                </span>
+              </a>
             </li>
           @endif
 
           {{-- Menu Utente Autenticato --}}
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle"
-               role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Ciao, {{ Auth::user()->name }}
             </a>
             <ul class="dropdown-menu">
@@ -71,8 +76,8 @@
         @else
           {{-- Utente non autenticato --}}
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle"
-               role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button"
+               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Ciao, Utente
             </a>
             <ul class="dropdown-menu">
@@ -81,8 +86,17 @@
             </ul>
           </li>
         @endauth
-
       </ul>
+
+      {{-- Ricerca --}}
+      <form class="d-flex ms-auto" role="search" action="{{ route('article.search') }}" method="GET">
+        <div class="input-group">
+          <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
+          <button type="submit" class="input-group-text btn btn-outline-success" id="basic-addon2">
+            Search
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </nav>
