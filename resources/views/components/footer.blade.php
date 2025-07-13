@@ -1,4 +1,10 @@
 <footer class="bg-body-tertiary text-center">
+  <!-- Sezione: Lavora con noi -->
+  <div class="col-md-5 offset-md-1 mb-3 text-center">
+    <h5>Vuoi Diventare un Revisore?</h5>
+    <p>Clicca il bottone sottostante farai richiesta al nostro admin</p>
+    <a href="{{ route('became.revisor') }}" class="btn btn-success">Diventa Revisore</a>
+  </div>
   <!-- Contenitore griglia -->
   <div class="container p-4 pb-0">
     <!-- Sezione: Social media -->
