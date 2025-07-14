@@ -3,7 +3,7 @@
   <div class="col-md-5 offset-md-1 mb-3 text-center">
     <h5>{{ __('ui.footerReviewerTitle') }}</h5>
     <p>{{ __('ui.footerReviewerText') }}</p>
-    <a href="{{ route('became.revisor') }}" class="btn btn-success">
+    <a href="{{ route('become.revisor') }}" class="btn btn-success">
       {{ __('ui.footerReviewerButton') }}
     </a>
   </div>

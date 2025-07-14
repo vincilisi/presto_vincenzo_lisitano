@@ -24,7 +24,7 @@ Route::patch('/reject/{article}', [RevisorController::class, 'reject'])->name('r
 
 Route::get('revisor/index', [RevisorController::class, 'index'])->middleware('isRevisor')->name('revisor.index');
 
-Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('became.revisor');
+Route::get('/revisor/request', [RevisorController::class, 'becomeRevisor'])->middleware('auth')->name('become.revisor');
 
 Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->name('make.revisor');
 

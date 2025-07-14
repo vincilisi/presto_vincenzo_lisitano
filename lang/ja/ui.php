@@ -77,6 +77,15 @@ return [
     'errorMessage' => 'エラーが発生しました',
     'genericMessage' => '情報メッセージ',
 
+    'imageOfArticle' => '記事「:title」の画像 :num',
+    'previous' => '前へ',
+    'next' => '次へ',
+
+      // 📚 記事
+    'noArticlesGeneric' => '記事はまだ作成されていません',
+    'noArticles' => '利用可能な記事はありません',
+    'publishArticle' => '記事を投稿する',
+
     // 🦶 フッター
     'footerReviewerTitle' => 'レビュアーになりたいですか？',
     'footerReviewerText' => '下のボタンをクリックして申請してください',

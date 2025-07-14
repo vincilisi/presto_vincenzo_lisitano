@@ -92,6 +92,14 @@ return [
     'previous' => 'Precedente',
     'next' => 'Successivo',
 
+    // 📚 Articoli
+    // 📚 Articoli
+    'noArticlesGeneric' => 'Non sono ancora stati creati Articoli',
+    'noArticles' => 'Nessun articolo disponibile',
+    'publishArticle' => 'Pubblica un articolo',
+
+
+
     // 🦶 Footer
     'footerReviewerTitle' => 'Vuoi Diventare un Revisore?',
     'footerReviewerText' => 'Clicca il bottone sottostante farai richiesta al nostro admin',

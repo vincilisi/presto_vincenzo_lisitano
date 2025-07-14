@@ -77,6 +77,17 @@ return [
     'errorMessage' => 'Une erreur est survenue',
     'genericMessage' => 'Message informatif',
 
+    'imageOfArticle' => 'Image :num de l\'article ":title"',
+    'previous' => 'Précédent',
+    'next' => 'Suivant',
+
+    // 📚 Articles
+    'noArticlesGeneric' => 'Aucun article n’a encore été créé',
+    'noArticles' => 'Aucun article disponible',
+    'publishArticle' => 'Publier un article',
+
+
+
     // 🦶 Pied de page
     'footerReviewerTitle' => 'Vous souhaitez devenir rédacteur ?',
     'footerReviewerText' => 'Cliquez sur le bouton ci-dessous pour en faire la demande',

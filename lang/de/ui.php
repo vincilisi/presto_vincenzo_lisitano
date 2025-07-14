@@ -77,6 +77,17 @@ return [
     'errorMessage' => 'Ein Fehler ist aufgetreten',
     'genericMessage' => 'Informationsmeldung',
 
+    'imageOfArticle' => 'Bild :num des Artikels ":title"',
+    'previous' => 'Zurück',
+    'next' => 'Weiter',
+
+    // 📚 Artikel
+    'noArticlesGeneric' => 'Es wurden noch keine Artikel erstellt',
+    'noArticles' => 'Keine Artikel verfügbar',
+    'publishArticle' => 'Artikel veröffentlichen',
+
+
+
     // 🦶 Footer
     'footerReviewerTitle' => 'Möchten Sie Redakteur werden?',
     'footerReviewerText' => 'Klicken Sie unten, um eine Anfrage zu senden',

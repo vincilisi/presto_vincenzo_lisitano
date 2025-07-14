@@ -76,6 +76,16 @@ return [
     'successMessage' => 'Operation completed successfully',
     'errorMessage' => 'An error occurred',
     'genericMessage' => 'Info message',
+    
+    'imageOfArticle' => 'Image :num of article ":title"',
+    'previous' => 'Previous',
+    'next' => 'Next',
+
+    // 📚 Articles
+    'noArticlesGeneric' => 'No articles have been created yet',
+    'noArticles' => 'No articles available',
+    'publishArticle' => 'Publish an article',
+
 
     // Footer
     'footerReviewerTitle' => 'Want to become a Reviewer?',

@@ -77,6 +77,11 @@ return [
     'errorMessage' => 'Se produjo un error',
     'genericMessage' => 'Mensaje informativo',
 
+    // 📚 Artículos
+    'noArticlesGeneric' => 'Aún no se han creado artículos',
+    'noArticles' => 'No hay artículos disponibles',
+    'publishArticle' => 'Publicar un artículo',
+
     // 🦶 Footer
     'footerReviewerTitle' => '¿Quieres convertirte en revisor?',
     'footerReviewerText' => 'Haz clic en el botón inferior para solicitar acceso',
