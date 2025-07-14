@@ -1,37 +1,13 @@
 <?php
+
 return [
-    'title' => 'Presto.it',
-    'publishArticle' => 'Publica tu artículo',
-    'noArticles' => 'Aún no se han creado artículos',
-    'successMessage' => '¡Artículo publicado con éxito!',
-
-    'navbarHome' => 'Inicio',
-    'navbarArticles' => 'Artículos',
-    'navbarCategories' => 'Categoría',
-    'navbarReviewerZone' => 'Zona Revisor',
-    'navbarCreate' => 'Crear',
-    'navbarProfile' => 'Perfil',
-    'navbarSettings' => 'Configuración',
-    'navbarLogout' => 'Cerrar sesión',
-    'navbarLogin' => 'Iniciar sesión',
-    'navbarRegister' => 'Registrarse',
-    'navbarHelloUser' => 'Hola, :name',
-
-    'searchPlaceholder' => 'Buscar',
-    'searchButton' => 'Buscar',
-
-    'footerReviewerTitle' => '¿Quieres ser Revisor?',
-    'footerReviewerText' => 'Haz clic en el botón para solicitar al administrador',
-    'footerReviewerButton' => 'Conviértete en Revisor',
-
-    'cardDetailButton' => 'Detalle',
-    'cardNoCategory' => 'Sin categoría',
-
+    // 🔐 Sección de inicio de sesión
     'loginTitle' => 'Iniciar sesión',
     'loginEmail' => 'Correo electrónico',
     'loginPassword' => 'Contraseña',
     'loginButton' => 'Entrar',
 
+    // 📝 Sección de registro
     'registerTitle' => 'Registrarse',
     'registerName' => 'Nombre',
     'registerEmail' => 'Correo electrónico',
@@ -39,29 +15,71 @@ return [
     'registerPasswordConfirm' => 'Confirmar contraseña',
     'registerButton' => 'Registrarse',
 
+    // 📄 Detalle del artículo
     'detailTitle' => 'Detalle del artículo',
     'detailPrice' => 'Precio',
     'detailDescription' => 'Descripción',
+    'detailButton' => 'Detalle',
 
-    'searchResults' => 'Resultados de búsqueda para',
-    'searchNoResults' => 'Ningún artículo coincide con tu búsqueda',
+    // 🔎 Búsqueda
+    'searchResults' => 'Resultados para la búsqueda',
+    'searchNoResults' => 'No se encontraron artículos que coincidan con tu búsqueda',
+    'searchPlaceholder' => 'Buscar',
+    'searchButton' => 'Buscar',
 
+    // 📚 Artículos
     'allArticles' => 'Todos los artículos',
     'noArticlesGeneric' => 'Aún no se han creado artículos',
-    'publishTitle' => 'Publica un artículo',
+    'publishTitle' => 'Publicar un artículo',
+    'publishArticleTitle' => 'Publicar un artículo',
 
+    // 🗂 Artículos por categoría
     'categoryArticlesTitle' => 'Artículos de la categoría',
-    'categoryNoArticles' => '¡No hay artículos en esta categoría!',
-    'categoryPublishButton' => 'Publica un artículo',
+    'categoryNoArticles' => 'Aún no se han creado artículos en esta categoría',
+    'categoryPublishButton' => 'Publicar un artículo',
 
-    'elettronica' => 'Electrónica',
-    'abbigliamento' => 'Ropa',
-    'salute_e_bellezza' => 'Salud y belleza',
-    'casa_e_giardinaggio' => 'Hogar y jardín',
-    'giocattoli' => 'Juguetes',
-    'sport' => 'Deportes',
-    'accessori' => 'Accesorios',
-    'motori' => 'Motores',
+    // 🧭 Navbar
+    'title' => 'Presto.it',
+    'toggleNavigation' => 'Activar navegación',
+    'navbarHome' => 'Inicio',
+    'navbarArticles' => 'Artículos',
+    'navbarCategories' => 'Categoría',
+    'navbarReviewerZone' => 'Zona Revisor',
+    'navbarHelloUser' => 'Hola, :name',
+    'navbarGuest' => 'Usuario',
+    'navbarCreate' => 'Crear',
+    'navbarProfile' => 'Perfil',
+    'navbarSettings' => 'Configuración',
+    'navbarLogout' => 'Salir',
+    'navbarLogin' => 'Entrar',
+    'navbarRegister' => 'Registrarse',
 
-    'publishArticleTitle' => 'Publicar un artículo'
+    // 📷 Imágenes y vista previa
+    'photoPreview' => 'Vista previa de imágenes',
+    'imageAltArticle' => 'Imagen del artículo :title',
+    'placeholderImageAlt' => 'Imagen de marcador de posición',
+    'imageOfArticle' => 'Imagen :num del artículo ":title"',
+
+    // 🧾 Panel del revisor
+    'revisorDashboard' => 'Panel del revisor',
+    'rejectButton' => 'Rechazar',
+    'acceptButton' => 'Aceptar',
+    'author' => 'Autor',
+    'anonymous' => 'Anónimo',
+    'published' => 'Publicado',
+    'dateUnavailable' => 'Fecha no disponible',
+    'noCategory' => 'Sin categoría',
+    'noArticlesToReview' => 'No hay artículos para revisar',
+    'backToHomepage' => 'Volver al inicio',
+
+    // 🎫 Mensajes de sesión
+    'successMessage' => 'Operación completada con éxito',
+    'errorMessage' => 'Se produjo un error',
+    'genericMessage' => 'Mensaje informativo',
+
+    // 🦶 Footer
+    'footerReviewerTitle' => '¿Quieres convertirte en revisor?',
+    'footerReviewerText' => 'Haz clic en el botón inferior para solicitar acceso',
+    'footerReviewerButton' => 'Convertirse en revisor',
+    'copyright' => 'Derechos de autor',
 ];

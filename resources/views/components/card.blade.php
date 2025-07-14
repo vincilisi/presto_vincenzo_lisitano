@@ -1,5 +1,5 @@
 <div class="card mx-auto card-w shadow text-center mb-3">
-    <img src="https://picsum.photos/200" alt="{{ __('ui.imageAltArticle', ['title' => $article->title]) }}" class="card-img-top">
+    <img src="{{article->images->isNotEmpty() ? Storage::url($article->images->first()->path):'https//picsum.photos/200'}}" class="card-img-top" alt="Immagine dell'articolo{{$article->title}}">
 
     <div class="card-body">
         <h4 class="card-title">{{ $article->title }}</h4>

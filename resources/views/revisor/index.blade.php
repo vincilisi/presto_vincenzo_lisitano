@@ -4,7 +4,7 @@
             <div class="col-3">
                 <div class="rounded shadow bg-body-secondary">
                     <h1 class="display-5 text-center pb-2">
-                        Revisore dashboard
+                        {{ __('ui.revisorDashboard') }}
                     </h1>
                 </div>
             </div>
@@ -12,16 +12,26 @@
         </div>
 
         @if ($article_to_check)
-            <div class="d-flex justify-content-center pt-5">
+            <div class="row justify-content-center pt-5">
                 <div class="col-md-8">
                     <div class="row justify-content-center">
-                        @for ($i = 0; $i < 6; $i++)
-                            <div class="col-6 col-md-4 mb-4 text-center">
-                                <img src="https://picsum.photos/300"
-                                     class="img-fluid rounded shadow"
-                                     alt="immagine segnaposto">
-                            </div>
-                        @endfor
+                        @if ($article_to_check->images->count())
+                            @foreach ($article_to_check->images as $key => $image)
+                                <div class="col-6 col-md-4 mb-4">
+                                    <img src="{{ Storage::url($image->path) }}"
+                                         class="img-fluid rounded shadow"
+                                         alt="{{ __('ui.imageOfArticle', ['num' => $key + 1, 'title' => $article_to_check->title]) }}">
+                                </div>
+                            @endforeach
+                        @else
+                            @for ($i = 0; $i < 6; $i++)
+                                <div class="col-6 col-md-4 mb-4 text-center">
+                                    <img src="https://picsum.photos/300"
+                                         class="img-fluid rounded shadow"
+                                         alt="{{ __('ui.placeholderImageAlt') }}">
+                                </div>
+                            @endfor
+                        @endif
                     </div>
 
                     {{-- Bottoni di accettazione/rifiuto --}}
@@ -29,12 +39,16 @@
                         <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
+                            <button class="btn btn-danger py-2 px-5 fw-bold">
+                                {{ __('ui.rejectButton') }}
+                            </button>
                         </form>
                         <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
+                            <button class="btn btn-success py-2 px-5 fw-bold">
+                                {{ __('ui.acceptButton') }}
+                            </button>
                         </form>
                     </div>
 
@@ -52,10 +66,10 @@
                 <div class="col-md-4 ps-4 d-flex flex-column justify-content-between">
                     <div>
                         <h3>{{ $article_to_check->title }}</h3>
-                        <h3>Autore: {{ optional($article_to_check->user)->name ?? 'Anonimo' }}</h3>
-                        <h4>Pubblicato: {{ $article_to_check->expire ?? 'Data non disponibile' }}</h4>
+                        <h3>{{ __('ui.author') }}: {{ optional($article_to_check->user)->name ?? __('ui.anonymous') }}</h3>
+                        <h4>{{ __('ui.published') }}: {{ $article_to_check->expire ?? __('ui.dateUnavailable') }}</h4>
                         <h4 class="fst-italic text-muted">
-                            {{ optional($article_to_check->category)->name ?? 'Nessuna categoria' }}
+                            {{ optional($article_to_check->category)->name ?? __('ui.noCategory') }}
                         </h4>
                         <p class="h6">{{ $article_to_check->description }}</p>
                     </div>
@@ -64,12 +78,16 @@
                         <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-danger py-2 px-5 fw-bold">Rifiuta</button>
+                            <button class="btn btn-danger py-2 px-5 fw-bold">
+                                {{ __('ui.rejectButton') }}
+                            </button>
                         </form>
                         <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
-                            <button class="btn btn-success py-2 px-5 fw-bold">Accetta</button>
+                            <button class="btn btn-success py-2 px-5 fw-bold">
+                                {{ __('ui.acceptButton') }}
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -78,9 +96,11 @@
             <div class="row justify-content-center align-items-center height-custom text-center">
                 <div class="col-12">
                     <h1 class="fst-italic display-4">
-                        Nessun articolo da revisionare
+                        {{ __('ui.noArticlesToReview') }}
                     </h1>
-                    <a href="{{ route('homepage') }}" class="mt-5 btn btn-success">Torna all'homepage</a>
+                    <a href="{{ route('homepage') }}" class="mt-5 btn btn-success">
+                        {{ __('ui.backToHomepage') }}
+                    </a>
                 </div>
             </div>
         @endif

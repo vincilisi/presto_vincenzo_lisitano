@@ -1,67 +1,85 @@
 <?php
-return [
-    'title' => 'Presto.it',
-    'publishArticle' => 'Publie ton article',
-    'noArticles' => 'Aucun article n\'a encore été créé',
-    'successMessage' => 'Article publié avec succès !',
 
+return [
+    // 🔐 Section Connexion
+    'loginTitle' => 'Connexion',
+    'loginEmail' => 'Adresse e-mail',
+    'loginPassword' => 'Mot de passe',
+    'loginButton' => 'Se connecter',
+
+    // 📝 Section Inscription
+    'registerTitle' => 'Inscription',
+    'registerName' => 'Nom',
+    'registerEmail' => 'Adresse e-mail',
+    'registerPassword' => 'Mot de passe',
+    'registerPasswordConfirm' => 'Confirmer le mot de passe',
+    'registerButton' => 'S’inscrire',
+
+    // 📄 Détail de l'article
+    'detailTitle' => 'Détail de l\'article',
+    'detailPrice' => 'Prix',
+    'detailDescription' => 'Description',
+    'detailButton' => 'Détails',
+
+    // 🔎 Recherche
+    'searchResults' => 'Résultats pour la recherche',
+    'searchNoResults' => 'Aucun article ne correspond à votre recherche',
+    'searchPlaceholder' => 'Recherche',
+    'searchButton' => 'Rechercher',
+
+    // 📚 Articles
+    'allArticles' => 'Tous les articles',
+    'noArticlesGeneric' => 'Aucun article n’a encore été créé',
+    'publishTitle' => 'Publier un article',
+    'publishArticleTitle' => 'Publier un article',
+
+    // 🗂 Articles par catégorie
+    'categoryArticlesTitle' => 'Articles de la catégorie',
+    'categoryNoArticles' => 'Aucun article n’a encore été créé pour cette catégorie !',
+    'categoryPublishButton' => 'Publier un article',
+
+    // 🧭 Barre de navigation
+    'title' => 'Presto.it',
+    'toggleNavigation' => 'Afficher la navigation',
     'navbarHome' => 'Accueil',
     'navbarArticles' => 'Articles',
     'navbarCategories' => 'Catégorie',
-    'navbarReviewerZone' => 'Zone Relecteur',
+    'navbarReviewerZone' => 'Zone Rédacteur',
+    'navbarHelloUser' => 'Bonjour, :name',
+    'navbarGuest' => 'Invité',
     'navbarCreate' => 'Créer',
     'navbarProfile' => 'Profil',
     'navbarSettings' => 'Paramètres',
     'navbarLogout' => 'Déconnexion',
     'navbarLogin' => 'Connexion',
-    'navbarRegister' => 'S’inscrire',
-    'navbarHelloUser' => 'Bonjour, :name',
+    'navbarRegister' => 'Inscription',
 
-    'searchPlaceholder' => 'Rechercher',
-    'searchButton' => 'Chercher',
+    // 📷 Images & aperçu
+    'photoPreview' => 'Aperçu des images',
+    'imageAltArticle' => 'Image de l\'article :title',
+    'placeholderImageAlt' => 'Image de remplacement',
+    'imageOfArticle' => 'Image :num de l\'article ":title"',
 
-    'footerReviewerTitle' => 'Tu veux devenir Relecteur ?',
-    'footerReviewerText' => 'Clique sur le bouton ci-dessous pour faire une demande à l’administrateur',
-    'footerReviewerButton' => 'Devenir Relecteur',
+    // 🧾 Tableau Rédacteur
+    'revisorDashboard' => 'Tableau de bord rédacteur',
+    'rejectButton' => 'Refuser',
+    'acceptButton' => 'Accepter',
+    'author' => 'Auteur',
+    'anonymous' => 'Anonyme',
+    'published' => 'Publié',
+    'dateUnavailable' => 'Date non disponible',
+    'noCategory' => 'Aucune catégorie',
+    'noArticlesToReview' => 'Aucun article à vérifier',
+    'backToHomepage' => 'Retour à l\'accueil',
 
-    'cardDetailButton' => 'Détail',
-    'cardNoCategory' => 'Aucune catégorie',
+    // 🎫 Messages session
+    'successMessage' => 'Opération effectuée avec succès',
+    'errorMessage' => 'Une erreur est survenue',
+    'genericMessage' => 'Message informatif',
 
-    'loginTitle' => 'Connexion',
-    'loginEmail' => 'Adresse email',
-    'loginPassword' => 'Mot de passe',
-    'loginButton' => 'Se connecter',
-
-    'registerTitle' => 'S’inscrire',
-    'registerName' => 'Nom',
-    'registerEmail' => 'Adresse email',
-    'registerPassword' => 'Mot de passe',
-    'registerPasswordConfirm' => 'Confirme le mot de passe',
-    'registerButton' => 'S’inscrire',
-
-    'detailTitle' => 'Détail de l\'article',
-    'detailPrice' => 'Prix',
-    'detailDescription' => 'Description',
-
-    'searchResults' => 'Résultats pour la recherche',
-    'searchNoResults' => 'Aucun article ne correspond à ta recherche',
-
-    'allArticles' => 'Tous les articles',
-    'noArticlesGeneric' => 'Aucun article n\'a encore été créé',
-    'publishTitle' => 'Publie un article',
-
-    'categoryArticlesTitle' => 'Articles de la catégorie',
-    'categoryNoArticles' => 'Aucun article n\'a été créé dans cette catégorie !',
-    'categoryPublishButton' => 'Publie un article',
-
-    'elettronica' => 'Électronique',
-    'abbigliamento' => 'Vêtements',
-    'salute_e_bellezza' => 'Santé et beauté',
-    'casa_e_giardinaggio' => 'Maison et jardinage',
-    'giocattoli' => 'Jouets',
-    'sport' => 'Sport',
-    'accessori' => 'Accessoires',
-    'motori' => 'Moteurs',
-
-    'publishArticleTitle' => 'Publier un article'
+    // 🦶 Pied de page
+    'footerReviewerTitle' => 'Vous souhaitez devenir rédacteur ?',
+    'footerReviewerText' => 'Cliquez sur le bouton ci-dessous pour en faire la demande',
+    'footerReviewerButton' => 'Devenir rédacteur',
+    'copyright' => 'Droits d\'auteur',
 ];
