@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Livewire;
+
+use App\Jobs\ResizeImage;
 use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;   
@@ -23,30 +25,33 @@ class CreateArticleForm extends Component
     public $images = [];
     public $temporary_images;
 
-    public function store()
+   public function store()
+{
+    $this->validate();
+
+    // Crea l'articolo
+    $article = Article::create([
+        'title' => $this->title,
+        'description' => $this->description,
+        'price' => $this->price,
+        'category_id' => $this->category,
+        'user_id' => Auth::user()->id,
+    ]);
+
+    // Salva le immagini caricate
+    if(count($this->image) >0)
     {
-        $this->validate();
-        $this->article = Article::create([
-            'title' =>$this->title,
-            'description' => $this->description,
-            'price' => $this->price,
-            'category' => $this->category,
-            'user_id' =>Auth::id()
-        ]);
-
-        if(count($this->images) >0)
+        foreach($this->images as $image)
         {
-            foreach($this->images as $image)
-            {
-                $this->article->images()->create([
-                    'path' =>$image->store('images', 'public')
-                ]);
-            }
+            $newFileName = 'article/{$this->article->id}';
+            $newImage =$this->article->images()->create(['path => $image->store($newFileName', 'public']);
+            dispatch(new ResizeImage($newImage->path, 300 , 300));
         }
-
-        $this->cleanForm();
         session()->flash('success', 'Articolo creato correttamente');
+        $this->cleanForm();
     }
+    
+}
 
 
     public function render()

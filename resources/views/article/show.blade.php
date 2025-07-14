@@ -12,18 +12,12 @@
       <div class="col-12 col-md-6 mb-3">
         <div id="carouselExample1" class="carousel slide">
           <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="https://picsum.photos/400" class="d-block w-100 rounded shadow"
-                   alt="{{ __('ui.imageAltArticle', ['title' => $article->title]) }}">
+            @foreach ($article->images as $key => $image)
+            <div class="carousel-item" @if($loop->first) active @endif>
+              <img src="{{$image->getUrl(300,300)}}" alt="Immagine{{$key+1}} dell'articolo {{$article->title}}" class="d-block w-100 rounded shadow">
             </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/400" class="d-block w-100 rounded shadow"
-                   alt="{{ __('ui.imageAltArticle', ['title' => $article->title]) }}">
-            </div>
-            <div class="carousel-item">
-              <img src="https://picsum.photos/400" class="d-block w-100 rounded shadow"
-                   alt="{{ __('ui.imageAltArticle', ['title' => $article->title]) }}">
-            </div>
+                
+            @endforeach
           </div>
 
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">

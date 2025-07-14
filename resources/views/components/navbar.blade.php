@@ -10,7 +10,6 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
-
         {{-- Home --}}
         <li class="nav-item">
           <a class="nav-link {{ request()->routeIs('homepage') ? 'active' : '' }}"
@@ -23,10 +22,10 @@
              href="{{ route('article.index') }}">{{ __('ui.navbarArticles') }}</a>
         </li>
 
-        {{-- Categoria Dropdown --}}
+        {{-- Categorie --}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button"
-             data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             data-bs-toggle="dropdown">
              {{ __('ui.navbarCategories') }}
           </a>
           <ul class="dropdown-menu">
@@ -34,7 +33,7 @@
               <li>
                 <a class="dropdown-item text-capitalize"
                    href="{{ route('byCategory', ['category' => $category->id]) }}">
-                   {{ __('category.' . Str::slug($category->name, '_')) }}
+                   {{ __('category.' . Str::slug($category->name, '-')) }}
                 </a>
               </li>
               @if (! $loop->last)
@@ -62,9 +61,8 @@
         {{-- Utente --}}
         @auth
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               {{ __('ui.navbarHelloUser', ['name' => Auth::user()->name]) }}
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              {{ __('ui.navbarHelloUser', ['name' => Auth::user()->name]) }}
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{ route('create.article') }}">{{ __('ui.navbarCreate') }}</a></li>
@@ -84,9 +82,8 @@
           </form>
         @else
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button"
-               data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               {{ __('ui.navbarHelloUser', ['name' => __('ui.navbarGuest')]) }}
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              {{ __('ui.navbarHelloUser', ['name' => __('ui.navbarGuest')]) }}
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.navbarLogin') }}</a></li>
@@ -96,16 +93,40 @@
         @endauth
       </ul>
 
-      {{-- Bandiere --}}
-      @php $langs = ['it','en','ja','fr','de','es']; @endphp
-      @foreach ($langs as $lang)
-        <x-_locale :lang="$lang" />
-      @endforeach
+      {{-- Lingue via POST --}}
+      @php
+        $langs = ['it','en','ja','fr','de','es'];
+        $langLabels = ['it' => 'IT', 'en' => 'EN', 'ja' => 'JP', 'fr' => 'FR', 'de' => 'DE', 'es' => 'ES'];
+        $currentLang = app()->getLocale();
+      @endphp
+
+      <div class="dropdown mx-3">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">
+          <x-_locale :lang="$currentLang" />
+          <span class="ms-1">{{ strtoupper($currentLang) }}</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownLanguage">
+          @foreach ($langs as $lang)
+            @if ($lang !== $currentLang)
+              <li>
+                <form method="POST" action="{{ route('setLocale', $lang) }}">
+                  @csrf
+                  <button type="submit" class="dropdown-item d-flex align-items-center border-0 bg-transparent">
+                    <x-_locale :lang="$lang" />
+                    <span class="ms-2">{{ $langLabels[$lang] }}</span>
+                  </button>
+                </form>
+              </li>
+            @endif
+          @endforeach
+        </ul>
+      </div>
 
       {{-- Ricerca --}}
-      <form class="d-flex ms-auto" role="search" action="{{ route('article.search') }}" method="GET">
+      <form class="d-flex" role="search" action="{{ route('article.search') }}" method="GET">
         <div class="input-group">
-          <input type="search" name="query" class="form-control" placeholder="{{ __('ui.searchPlaceholder') }}" aria-label="search">
+          <input type="search" name="query" class="form-control" placeholder="{{ __('ui.searchPlaceholder') }}">
           <button type="submit" class="input-group-text btn btn-outline-success">
             {{ __('ui.searchButton') }}
           </button>

@@ -11,6 +11,13 @@
             <div class="col"></div>
         </div>
 
+        @foreach ($article_to_check->image as $key =>$image)
+        <div class="col-6 col-md-4 mb-4 text-center">
+            <img src="{{$image->getUrl(300, 300)}}" alt="Immagine{{$key + 1}} 'dell'articolo {{$article_to_check->title}}"class="img-fluid rounded shadow">
+        </div>
+            
+        @endforeach
+
         @if ($article_to_check)
             <div class="row justify-content-center pt-5">
                 <div class="col-md-8">

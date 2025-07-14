@@ -5,7 +5,7 @@
         <h1 class="display-2">
           {{ __('ui.articlesByCategory') }} 
           <span class="fst-italic fw-bold">
-            {{ __('category.' . Str::slug($category->name, '_')) }}
+            {{ __('category.' . Str::slug($category->name, '-')) }}
           </span>
         </h1>
       </div>

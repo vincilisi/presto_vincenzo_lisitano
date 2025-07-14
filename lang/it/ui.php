@@ -80,8 +80,8 @@ return [
     // 🏷️ Categorie
     'elettronica' => 'Elettronica',
     'abbigliamento' => 'Abbigliamento',
-    'salute_e_bellezza' => 'Salute e Bellezza',
-    'casa_e_giardinaggio' => 'Casa e Giardinaggio',
+    'salute-e-bellezza' => 'Salute e Bellezza',
+    'casa-e-giardinaggio' => 'Casa e Giardinaggio',
     'giocattoli' => 'Giocattoli',
     'sport' => 'Sport',
     'accessori' => 'Accessori',
