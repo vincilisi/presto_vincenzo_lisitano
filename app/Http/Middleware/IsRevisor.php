@@ -10,18 +10,19 @@ use Symfony\Component\HttpFoundation\Response;
 class IsRevisor
 {
     /**
-     * Handle an incoming request.
+     * Gestisce la richiesta in entrata e verifica se l'utente è un revisore.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check() && Auth::user()->is_revisor)
-        {
+        if (Auth::check() && Auth::user()->is_revisor) {
             return $next($request);
         }
-        return redirect()->route('homepage')->with('errorMessage', 'Zona Riservata ai revisori');
-        // Optionally, you can redirect or abort if the user is not a revisor
-        abort(403, 'Unauthorized');
+
+        return redirect()->route('homepage')
+                         ->with('errorMessage', 'Zona riservata ai revisori.');
     }
 }

@@ -1,13 +1,13 @@
 <x-layout>
     <div class="container-fluid text-center bg-body-tertiary">
         <div class="col-12">
-            <h1 class="display-4">Presto.it</h1>
+            <h1 class="display-4">{{ __('ui.title') }}</h1>
         </div>
 
         <div class="my-3">
             @auth
                 <a href="{{ route('create.article') }}" class="btn btn-dark">
-                    Pubblica il tuo Articolo
+                    {{ __('ui.publishArticle') }}
                 </a>
             @endauth
         </div>
@@ -21,7 +21,7 @@
         @empty
             <div class="col-12">
                 <h3 class="text-center">
-                    Non sono ancora stati creati articoli
+                    {{ __('ui.noArticles') }}
                 </h3>
             </div>
         @endforelse
