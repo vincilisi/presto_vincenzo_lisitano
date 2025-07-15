@@ -39,4 +39,11 @@ public function getUrl($w = null, $h = null)
     return self::getUrlByFilePath($this->path, $w, $h);
 }
 
+protected function cast(): array
+{
+    return  [
+        'labels' => 'array',
+    ];
+}
+
 }
