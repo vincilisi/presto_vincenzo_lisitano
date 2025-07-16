@@ -9,7 +9,7 @@ use App\Jobs\ResizeImage;
 use App\Models\Article;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rules\File;
-use Livewire\Attributes\Validate;   
+use Livewire\Attributes\Validate;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -43,7 +43,7 @@ class CreateArticleForm extends Component
     ]);
 
     // Salva le immagini caricate
-    if(count($this->image) >0)
+    if(count($this->images) >0)
     {
         foreach($this->images as $image)
         {
@@ -68,7 +68,7 @@ class CreateArticleForm extends Component
         session()->flash('success', 'Articolo creato correttamente');
         $this->cleanForm();
     }
-    
+
 }
 
 

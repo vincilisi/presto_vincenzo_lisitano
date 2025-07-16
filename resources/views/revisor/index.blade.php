@@ -84,7 +84,7 @@
                     </div>
 
                     {{-- Bottoni di accettazione/rifiuto --}}
-                    <div class="d-flex pb-4 justify-content-around">
+                    {{-- <div class="d-flex pb-4 justify-content-around">
                         <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                             @csrf
                             @method('PATCH')
@@ -99,7 +99,7 @@
                                 {{ __('ui.acceptButton') }}
                             </button>
                         </form>
-                    </div>
+                    </div> --}}
 
                     {{-- Messaggio flash --}}
                     @if(session()->has('message'))
