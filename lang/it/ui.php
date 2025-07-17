@@ -105,4 +105,19 @@ return [
     'footerReviewerText' => 'Clicca il bottone sottostante farai richiesta al nostro admin',
     'footerReviewerButton' => 'Diventa Revisore',
     'copyright' => 'Copyright',
+
+    'navbarCart' => 'Carrello',
+    'addToCartButton' => 'Aggiungi al carrello',
+    'checkoutButton' => 'Procedi all’acquisto',
+    'emptyCartMessage' => 'Il carrello è vuoto',
+
+
+    'navbarCart' => 'Carrello',
+    'addToCartButton' => 'Aggiungi al carrello',
+    'checkoutButton' => 'Procedi all’acquisto',
+    'emptyCartMessage' => 'Il carrello è vuoto',
+    'removedFromCart' => 'Articolo rimosso dal carrello',
+    'addedToCart' => 'Articolo aggiunto al carrello',
+    'checkoutSuccess' => 'Acquisto completato! Grazie per il tuo ordine.',
+
 ];

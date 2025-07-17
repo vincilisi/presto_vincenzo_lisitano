@@ -76,7 +76,7 @@ return [
     'successMessage' => 'Operation completed successfully',
     'errorMessage' => 'An error occurred',
     'genericMessage' => 'Info message',
-    
+
     'imageOfArticle' => 'Image :num of article ":title"',
     'previous' => 'Previous',
     'next' => 'Next',
@@ -92,4 +92,17 @@ return [
     'footerReviewerText' => 'Click the button below to request access',
     'footerReviewerButton' => 'Become Reviewer',
     'copyright' => 'Copyright',
+
+    'navbarCart' => 'Cart',
+    'addToCartButton' => 'Add to cart',
+    'checkoutButton' => 'Proceed to checkout',
+    'emptyCartMessage' => 'Your cart is empty',
+
+    'navbarCart' => 'Cart',
+    'addToCartButton' => 'Add to cart',
+    'checkoutButton' => 'Proceed to checkout',
+    'emptyCartMessage' => 'Your cart is empty',
+    'removedFromCart' => 'Item removed from cart',
+    'addedToCart' => 'Item added to cart',
+    'checkoutSuccess' => 'Purchase completed! Thank you for your order.',
 ];

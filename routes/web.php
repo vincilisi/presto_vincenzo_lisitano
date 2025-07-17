@@ -12,7 +12,8 @@ Route::get('/create/article', [ArticleController::class, 'create'])->name('creat
 
 Route::get('/article/index',[ArticleController::class, 'index'])->name('article.index');
 
-Route::get('/show/article/{article}',[ArticleController::class, 'show'])->name('articles.show');
+Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
+
 
 Route::get('/category/{category}', [ArticleController::class, 'byCategory'])->name('byCategory');
 
@@ -31,3 +32,16 @@ Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->n
 Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
 
 Route::post('/lingua/{lang}',[PublicController::class, 'setLanguage'])->name('setLocale');
+
+
+use App\Http\Controllers\CartController;
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/remove', [CartController::class, 'remove'])->name('cart.remove');
+Route::post('/cart/checkout', function () {
+    session()->forget('cart');
+    return redirect()->route('cart.index')->with('successMessage', __('ui.checkoutSuccess'));
+})->name('cart.checkout');
+
+

@@ -58,6 +58,21 @@
           @endif
         @endauth
 
+        {{-- Carrello --}}
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="{{ route('cart.index') }}">
+            🛒 {{ __('ui.navbarCart') }}
+            @php
+              $cartCount = session('cart') ? count(session('cart')) : 0;
+            @endphp
+            @if ($cartCount > 0)
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ $cartCount }}
+              </span>
+            @endif
+          </a>
+        </li>
+
         {{-- Utente --}}
         @auth
           <li class="nav-item dropdown">
@@ -93,7 +108,7 @@
         @endauth
       </ul>
 
-      {{-- Lingue via POST --}}
+      {{-- Lingue --}}
       @php
         $langs = ['it','en','ja','fr','de','es'];
         $langLabels = ['it' => 'IT', 'en' => 'EN', 'ja' => 'JP', 'fr' => 'FR', 'de' => 'DE', 'es' => 'ES'];

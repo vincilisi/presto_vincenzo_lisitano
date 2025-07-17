@@ -93,4 +93,18 @@ return [
     'footerReviewerText' => 'Klicken Sie unten, um eine Anfrage zu senden',
     'footerReviewerButton' => 'Redakteur werden',
     'copyright' => 'Urheberrecht',
+
+    'navbarCart' => 'Warenkorb',
+    'addToCartButton' => 'In den Warenkorb',
+    'checkoutButton' => 'Zur Kasse',
+    'emptyCartMessage' => 'Der Warenkorb ist leer',
+
+    'navbarCart' => 'Warenkorb',
+    'addToCartButton' => 'In den Warenkorb',
+    'checkoutButton' => 'Zur Kasse',
+    'emptyCartMessage' => 'Der Warenkorb ist leer',
+    'removedFromCart' => 'Artikel aus dem Warenkorb entfernt',
+    'addedToCart' => 'Artikel zum Warenkorb hinzugefügt',
+    'checkoutSuccess' => 'Kauf abgeschlossen! Vielen Dank für Ihre Bestellung.',
+
 ];

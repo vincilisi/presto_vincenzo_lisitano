@@ -91,4 +91,18 @@ return [
     'footerReviewerText' => '下のボタンをクリックして申請してください',
     'footerReviewerButton' => 'レビュアーになる',
     'copyright' => '著作権',
+
+    'navbarCart' => 'カート',
+    'addToCartButton' => 'カートに追加',
+    'checkoutButton' => '購入手続きへ進む',
+    'emptyCartMessage' => 'カートは空です',
+
+    'navbarCart' => 'カート',
+    'addToCartButton' => 'カートに追加',
+    'checkoutButton' => '購入手続きへ進む',
+    'emptyCartMessage' => 'カートは空です',
+    'removedFromCart' => 'カートから商品を削除しました',
+    'addedToCart' => '商品をカートに追加しました',
+    'checkoutSuccess' => '購入が完了しました！ご注文ありがとうございます。',
+
 ];

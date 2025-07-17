@@ -93,4 +93,18 @@ return [
     'footerReviewerText' => 'Cliquez sur le bouton ci-dessous pour en faire la demande',
     'footerReviewerButton' => 'Devenir rédacteur',
     'copyright' => 'Droits d\'auteur',
+
+     'navbarCart' => 'Panier',
+    'addToCartButton' => 'Ajouter au panier',
+    'checkoutButton' => 'Passer à la caisse',
+    'emptyCartMessage' => 'Le panier est vide',
+
+    'navbarCart' => 'Panier',
+    'addToCartButton' => 'Ajouter au panier',
+    'checkoutButton' => 'Passer à la caisse',
+    'emptyCartMessage' => 'Le panier est vide',
+    'removedFromCart' => 'Article retiré du panier',
+    'addedToCart' => 'Article ajouté au panier',
+    'checkoutSuccess' => 'Achat terminé ! Merci pour votre commande.',
+
 ];

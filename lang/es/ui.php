@@ -87,4 +87,17 @@ return [
     'footerReviewerText' => 'Haz clic en el botón inferior para solicitar acceso',
     'footerReviewerButton' => 'Convertirse en revisor',
     'copyright' => 'Derechos de autor',
+
+
+    'navbarCart' => 'Carrito',
+    'addToCartButton' => 'Añadir al carrito',
+    'checkoutButton' => 'Proceder al pago',
+    'emptyCartMessage' => 'El carrito está vacío',
+    'navbarCart' => 'Carrito',
+    'addToCartButton' => 'Añadir al carrito',
+    'checkoutButton' => 'Proceder al pago',
+    'emptyCartMessage' => 'El carrito está vacío',
+    'removedFromCart' => 'Artículo eliminado del carrito',
+    'addedToCart' => 'Artículo añadido al carrito',
+    'checkoutSuccess' => '¡Compra completada! Gracias por tu pedido.',
 ];
