@@ -22,7 +22,7 @@
     <div class="row">
         <div class="col-12">
             <p>{{ __('ui.photoPreview') }}</p>
-            <div class="row border border-4 border-success rounded shadow py-4">
+            <div class="row  border-4 border-success rounded shadow py-4">
                 @foreach ($images as $image)
                     <div class="col d-flex flex-column align-items-center my-3">
                         <div class="img-preview mx-auto shadow rounded"
@@ -37,7 +37,7 @@
     {{-- Anteprima immagini --}}
 <p>{{ __('ui.photoPreview') }}</p>
 
-<div class="row border border-4 border-success rounded shadow py-4">
+<div class="row  border-4 border-success rounded shadow py-4">
     @foreach ($images as $key => $image)
         <div class="col d-flex flex-column align-items-center my-3">
             <div
