@@ -21,6 +21,10 @@ class Article extends Model
         'title', 'description', 'price', 'category_id', 'user_id'
     ];
 
+    protected $casts = [
+        'labels' => 'array',
+    ];
+
     // 🔗 Relazione con l'utente
     public function user(): BelongsTo
     {

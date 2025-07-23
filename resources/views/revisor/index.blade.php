@@ -82,6 +82,20 @@
                         @endif
                     </div>
 
+                    {{-- ✅ Etichette articolo (fuori dal ciclo immagini) --}}
+                    @if ($article_to_check->labels)
+                        <div class="col-12 col-md-10 mb-5">
+                            <div class="card shadow p-3">
+                                <h5>{{ __('ui.googleLabels') }}</h5>
+                                <ul>
+                                    @foreach ($article_to_check->labels as $label)
+                                        <li>{{ $label }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+                    @endif
+
                     @if(session()->has('message'))
                         <div class="row justify-content-center">
                             <div class="col-5 alert alert-success text-center shadow rounded">
