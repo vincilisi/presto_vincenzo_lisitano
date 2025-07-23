@@ -3,12 +3,10 @@
 namespace App\Jobs;
 
 use App\Models\Image;
-use Spatie\Image\Enums\Fit;
 use Illuminate\Bus\Queueable;
 use Illuminate\Support\Facades\Log;
-use Spatie\Image\Enums\AlignPosition;
 use Illuminate\Queue\SerializesModels;
-use Spatie\Image\Image as SpatieImage;
+use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -29,7 +27,7 @@ class RemoveFaces implements ShouldQueue
     {
         $imageRecord = Image::find($this->article_image_id);
         if (!$imageRecord) {
-            Log::warning("message");("Immagine non trovata con ID: {$this->article_image_id}");
+            Log::warning("Immagine non trovata con ID: {$this->article_image_id}");
             return;
         }
 
@@ -56,12 +54,8 @@ class RemoveFaces implements ShouldQueue
             return;
         }
 
-        $tempDir = storage_path('app/temp');
-        if (!file_exists($tempDir)) {
-            mkdir($tempDir, 0777, true);
-        }
-
-        $image = SpatieImage::load($srcPath);
+        // Carica l'immagine originale con Intervention Image
+        $image = Image::make($srcPath);
 
         foreach ($faces as $face) {
             $vertices = $face->getBoundingPoly()->getVertices();
@@ -81,28 +75,17 @@ class RemoveFaces implements ShouldQueue
             $w = max(1, max($xs) - $x);
             $h = max(1, max($ys) - $y);
 
-            $tempWatermarkPath = $tempDir . '/watermark_' . uniqid() . '.png';
+            // Carica il watermark, ridimensionandolo per coprire il volto
+            $watermark = Image::make(base_path('resources/img/smile.png'))
+                ->resize($w, $h);
 
-            try {
-                SpatieImage::load(base_path('resources/img/smile.png'))
-                    ->fit(Fit::Stretch, $w, $h)
-                    ->save($tempWatermarkPath);
-
-                $image->watermark(
-    $tempWatermarkPath,
-    position: AlignPosition::TopLeft,
-    paddingX: $x,
-    paddingY: $y
-);
-
-            } finally {
-                if (file_exists($tempWatermarkPath)) {
-                    unlink($tempWatermarkPath);
-                }
-            }
+            // Inserisci il watermark nell'immagine, posizionato esattamente sul volto
+            $image->insert($watermark, 'top-left', $x, $y);
         }
 
+        // Salva sovrascrivendo il file originale
         $image->save($srcPath);
+
         $imageAnnotator->close();
 
         Log::info("Faccine coperte con smile su immagine ID: {$this->article_image_id}");
