@@ -8,10 +8,11 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Bus\Queueable; // ✨ Trait mancante
 
 class ResizeImage implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, SerializesModels;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     private $w, $h, $fileName, $path;
 
@@ -25,21 +26,17 @@ class ResizeImage implements ShouldQueue
 
     public function handle(): void
     {
-        $w = $this->w;
-        $h = $this->h;
-
         $srcPath = storage_path("app/public/{$this->path}/{$this->fileName}");
-        $destFileName = "crop_{$w}x{$h}_{$this->fileName}";
+        $destFileName = "crop_{$this->w}x{$this->h}_{$this->fileName}";
         $destPath = storage_path("app/public/{$this->path}/{$destFileName}");
 
         $watermarkPath = base_path('resources/img/watermark.png');
 
         $image = Image::load($srcPath)
-            ->crop($w, $h, CropPosition::Center);
+            ->crop($this->w, $this->h, CropPosition::Center);
 
-        // Aggiunge solo il watermark se il file esiste
         if (file_exists($watermarkPath)) {
-            $image->watermark($watermarkPath); // Nessuna posizione personalizzata disponibile
+            $image->watermark($watermarkPath);
         }
 
         $image->save($destPath);
