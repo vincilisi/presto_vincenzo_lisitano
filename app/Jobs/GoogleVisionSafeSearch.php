@@ -1,9 +1,21 @@
 <?php
+namespace App\Jobs;
+
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Bus\Queueable;
+use Illuminate\Queue\SerializesModels;
+
+use App\Models\Image;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+
 class GoogleVisionSafeSearch implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     private $article_image_id;
+
     public function __construct($article_image_id)
     {
         $this->article_image_id = $article_image_id;
@@ -15,6 +27,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
         if (!$i) {
             return;
         }
+
         $image = file_get_contents(storage_path('app/public/' . $i->path));
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('google_credential.json'));
 
