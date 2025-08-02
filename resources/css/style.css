@@ -1,12 +1,13 @@
-.height-custom  {
-    min-height: 60vh; 
+.height-custom {
+    min-height: 60vh;
 }
-.collapse {
+
+.collapse1 {
     visibility: visible !important;
 }
 
 
-.img-preview{
+.img-preview {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

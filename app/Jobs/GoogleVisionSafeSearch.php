@@ -1,18 +1,15 @@
 <?php
+
 namespace App\Jobs;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
-
 use App\Models\Image;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class GoogleVisionSafeSearch implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Queueable;
 
     private $article_image_id;
 
@@ -36,6 +33,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
         $imageAnnotator->close();
 
         $safe = $response->getSafeSearchAnnotation();
+
 
         $adult = $safe->getAdult();
         $medical = $safe->getMedical();

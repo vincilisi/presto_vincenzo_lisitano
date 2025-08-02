@@ -10,7 +10,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "google/cloud-vision": "^2.0",
+        "google/cloud-vision": "1.10.3",
         "illuminate/contracts": "*",
         "intervention/image": "^3.11",
         "laravel/fortify": "^1.27",

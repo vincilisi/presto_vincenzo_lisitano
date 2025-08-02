@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d7586044fde215e5af4b05c9f1238f4",
+    "content-hash": "df3d0ffaac0c7b26e3750fed9887b4f6",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -958,22 +958,22 @@
         },
         {
             "name": "google/cloud-vision",
-            "version": "v2.0.3",
+            "version": "v1.10.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/googleapis/google-cloud-php-vision.git",
-                "reference": "a715b05bde5d7252561daed051877ab282790f0d"
+                "reference": "8d01d61c04571e2cf85f6823af45f9fcbe693b9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/googleapis/google-cloud-php-vision/zipball/a715b05bde5d7252561daed051877ab282790f0d",
-                "reference": "a715b05bde5d7252561daed051877ab282790f0d",
+                "url": "https://api.github.com/repos/googleapis/google-cloud-php-vision/zipball/8d01d61c04571e2cf85f6823af45f9fcbe693b9f",
+                "reference": "8d01d61c04571e2cf85f6823af45f9fcbe693b9f",
                 "shasum": ""
             },
             "require": {
                 "google/cloud-core": "^1.57",
                 "google/gax": "^1.36.0",
-                "php": "^8.1"
+                "php": "^8.0"
             },
             "require-dev": {
                 "erusev/parsedown": "^1.6",
@@ -1010,9 +1010,9 @@
             ],
             "description": "Cloud Vision Client for PHP",
             "support": {
-                "source": "https://github.com/googleapis/google-cloud-php-vision/tree/v2.0.3"
+                "source": "https://github.com/googleapis/google-cloud-php-vision/tree/v1.10.3"
             },
-            "time": "2025-07-18T20:06:03+00:00"
+            "time": "2025-01-24T21:24:06+00:00"
         },
         {
             "name": "google/common-protos",

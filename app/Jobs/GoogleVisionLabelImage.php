@@ -3,16 +3,13 @@
 namespace App\Jobs;
 
 use App\Models\Image;
-use Google\Cloud\Vision\V1\Client\ImageAnnotatorClient ;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class GoogleVisionLabelImage implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Queueable;
 
     private $article_image_id;
 

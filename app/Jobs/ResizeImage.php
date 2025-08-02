@@ -3,16 +3,14 @@
 namespace App\Jobs;
 
 use Spatie\Image\Image;
+use Spatie\Image\Enums\Unit;
 use Spatie\Image\Enums\CropPosition;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Bus\Queueable; // ✨ Trait mancante
 
 class ResizeImage implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Queueable;
 
     private $w, $h, $fileName, $path;
 
