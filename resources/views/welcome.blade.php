@@ -1,5 +1,5 @@
 <x-layout>
-    <div class="container-fluid text-center bg-body-tertiary">
+    <div class="container-fluid text-center">
         <div class="col-12">
             <h1 class="display-4">{{ __('ui.title') }}</h1>
         </div>

@@ -30,8 +30,10 @@ return [
     // 📚 Articoli
     'allArticles' => 'Tutti gli Articoli',
     'noArticlesGeneric' => 'Non sono ancora stati creati Articoli',
+    'noArticles' => 'Nessun articolo disponibile',
     'publishTitle' => 'Pubblica un Articolo',
     'publishArticleTitle' => 'Pubblica un Articolo',
+    'publishArticle' => 'Pubblica un articolo',
 
     // 🗂 Articoli per categoria
     'categoryArticlesTitle' => 'Articoli della categoria',
@@ -53,6 +55,7 @@ return [
     'navbarLogout' => 'Logout',
     'navbarLogin' => 'Accedi',
     'navbarRegister' => 'Registrati',
+    'navbarCart' => 'Carrello',
 
     // 📷 Immagini & anteprima
     'photoPreview' => 'Anteprima immagini',
@@ -88,17 +91,8 @@ return [
     'motori' => 'Motori',
 
     // Carousel
-    'imageOfArticle' => 'Immagine :num dell\'articolo ":title"',
     'previous' => 'Precedente',
     'next' => 'Successivo',
-
-    // 📚 Articoli
-    // 📚 Articoli
-    'noArticlesGeneric' => 'Non sono ancora stati creati Articoli',
-    'noArticles' => 'Nessun articolo disponibile',
-    'publishArticle' => 'Pubblica un articolo',
-
-
 
     // 🦶 Footer
     'footerReviewerTitle' => 'Vuoi Diventare un Revisore?',
@@ -106,18 +100,42 @@ return [
     'footerReviewerButton' => 'Diventa Revisore',
     'copyright' => 'Copyright',
 
-    'navbarCart' => 'Carrello',
-    'addToCartButton' => 'Aggiungi al carrello',
-    'checkoutButton' => 'Procedi all’acquisto',
-    'emptyCartMessage' => 'Il carrello è vuoto',
-
-
-    'navbarCart' => 'Carrello',
     'addToCartButton' => 'Aggiungi al carrello',
     'checkoutButton' => 'Procedi all’acquisto',
     'emptyCartMessage' => 'Il carrello è vuoto',
     'removedFromCart' => 'Articolo rimosso dal carrello',
     'addedToCart' => 'Articolo aggiunto al carrello',
     'checkoutSuccess' => 'Acquisto completato! Grazie per il tuo ordine.',
+
+    'articlesByCategory' => 'Articoli per categoria',
+    'noArticlesForCategory' => 'Nessun articolo per questa categoria',
+    'cardDetailButton' => 'Dettaglio',
+    'cardNoCategory' => 'Nessuna categoria',
+
+    // Traduzioni mancanti dal dashboard/revisione articoli
+    'dashboard' => 'Dashboard',
+    'Labels' => 'Etichette',
+    'noLabels' => 'Nessuna etichetta',
+    'Ratings' => 'Valutazioni',
+    'adult' => 'Adulto',
+    'violence' => 'Violenza',
+    'spoof' => 'Satira',
+    'racy' => 'Sensuale',
+    'medical' => 'Medico',
+    'refuse' => 'Rifiuta',
+    'accept' => 'Accetta',
+    'noRevision' => 'Nessun articolo da revisionare',
+    'backToHome' => 'Torna all\'homepage',
+
+    'settings' => 'Impostazioni',
+    'profileSettings' => 'Dati Profilo',
+    'name' => 'Nome',
+    'email' => 'Email',
+    'saveChanges' => 'Salva modifiche',
+    'changePassword' => 'Cambia Password',
+    'currentPassword' => 'Password Attuale',
+    'newPassword' => 'Nuova Password',
+    'confirmPassword' => 'Conferma Password',
+    'updatePassword' => 'Aggiorna Password',
 
 ];

@@ -16,13 +16,13 @@
         {{-- Pulsanti --}}
         <div class="d-flex justify-content-evenly align-items-center mt-4">
             {{-- Pulsante Dettaglio --}}
-            <a href="{{ route('articles.show', ['article' => $article]) }}" class="btn btn-primary">
+            <a href="{{ route('articles.show', ['article' => $article]) }}" class="btn btn-myblack">
                 {{ __('ui.cardDetailButton') }}
             </a>
 
             {{-- Pulsante Categoria --}}
             @if ($article->category)
-                <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="btn btn-outline-info">
+                <a href="{{ route('byCategory', ['category' => $article->category]) }}" class="btn btn-myred">
                     {{ __('category.' . Str::slug($article->category->name, '_')) }}
                 </a>
             @else

@@ -1,6 +1,8 @@
 <nav class="navbar navbar-expand-lg bg-light shadow">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ route('homepage') }}">{{ __('ui.title') }}</a>
+    <a class="navbar-brand" href="{{ route('homepage') }}">
+      <img src="{{ asset('image/logo.png') }}" alt="Logo" width="80" height="80" class="d-inline-block align-text-top">
+    </a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarNav" aria-controls="navbarNav"
@@ -8,25 +10,21 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse1 navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse my-nav-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
-        {{-- Home --}}
         <li class="nav-item">
           <a class="nav-link {{ request()->routeIs('homepage') ? 'active' : '' }}"
              href="{{ route('homepage') }}">{{ __('ui.navbarHome') }}</a>
         </li>
 
-        {{-- Articoli --}}
         <li class="nav-item">
           <a class="nav-link {{ request()->routeIs('article.index') ? 'active' : '' }}"
              href="{{ route('article.index') }}">{{ __('ui.navbarArticles') }}</a>
         </li>
 
-        {{-- Categorie --}}
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button"
-             data-bs-toggle="dropdown">
-             {{ __('ui.navbarCategories') }}
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            {{ __('ui.navbarCategories') }}
           </a>
           <ul class="dropdown-menu">
             @foreach ($categories as $category)
@@ -43,7 +41,6 @@
           </ul>
         </li>
 
-        {{-- Revisore --}}
         @auth
           @if (Auth::user()->is_revisor)
             <li class="nav-item position-relative">
@@ -58,13 +55,10 @@
           @endif
         @endauth
 
-        {{-- Carrello --}}
         <li class="nav-item">
           <a class="nav-link position-relative" href="{{ route('cart.index') }}">
             🛒 {{ __('ui.navbarCart') }}
-            @php
-              $cartCount = session('cart') ? count(session('cart')) : 0;
-            @endphp
+            @php $cartCount = session('cart') ? count(session('cart')) : 0; @endphp
             @if ($cartCount > 0)
               <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                 {{ $cartCount }}
@@ -72,35 +66,36 @@
             @endif
           </a>
         </li>
+      </ul>
 
-        {{-- Utente --}}
+      {{-- Utente --}}
+      <ul class="navbar-nav ms-auto">
         @auth
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
               {{ __('ui.navbarHelloUser', ['name' => Auth::user()->name]) }}
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ route('create.article') }}">{{ __('ui.navbarCreate') }}</a></li>
-              <li><a class="dropdown-item" href="#">{{ __('ui.navbarProfile') }}</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">{{ __('ui.navbarSettings') }}</a></li>
-              <li>
-                <a class="dropdown-item" href="#"
-                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                   {{ __('ui.navbarLogout') }}
-                </a>
-              </li>
-            </ul>
+            <ul class="dropdown-menu dropdown-menu-end">
+  <li><a class="dropdown-item" href="{{ route('create.article') }}">{{ __('ui.navbarCreate') }}</a></li>
+  <li><a class="dropdown-item" href="{{ route('profile') }}">{{ __('ui.navbarProfile') }}</a></li>
+  <li><a class="dropdown-item" href="{{ route('settings') }}">{{ __('ui.navbarSettings') }}</a></li>
+  <li><hr class="dropdown-divider"></li>
+  <li>
+    <a class="dropdown-item" href="#"
+       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+       {{ __('ui.navbarLogout') }}
+    </a>
+  </li>
+</ul>
+
           </li>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-            @csrf
-          </form>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
         @else
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
               {{ __('ui.navbarHelloUser', ['name' => __('ui.navbarGuest')]) }}
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-end">
               <li><a class="dropdown-item" href="{{ route('login') }}">{{ __('ui.navbarLogin') }}</a></li>
               <li><a class="dropdown-item" href="{{ route('register') }}">{{ __('ui.navbarRegister') }}</a></li>
             </ul>
@@ -114,7 +109,6 @@
         $langLabels = ['it' => 'IT', 'en' => 'EN', 'ja' => 'JP', 'fr' => 'FR', 'de' => 'DE', 'es' => 'ES'];
         $currentLang = app()->getLocale();
       @endphp
-
       <div class="dropdown mx-3">
         <button class="btn btn-outline-secondary dropdown-toggle" type="button"
                 id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false">

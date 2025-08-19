@@ -6,6 +6,9 @@
     visibility: visible !important;
 }
 
+.my-nav-collapse {
+    visibility: visible !important;
+}
 
 .img-preview {
     background-position: center;
@@ -13,4 +16,35 @@
     background-size: cover;
     height: 120px;
     width: 120px;
+}
+
+:root {
+    --myred: #d52919;
+    --myblack: #131513;
+}
+
+.bg-myred {
+    background-color: var(--myred);
+}
+
+.text-myred {
+    color: var(--myred);
+}
+
+.bg-myblack {
+    background-color: var(--myblack);
+}
+
+.text-myblack {
+    color: var(--myblack);
+}
+
+.btn-myred {
+    background-color: var(--myred) !important;
+    color: white !important;
+}
+
+.btn-myblack {
+    background-color: var(--myblack) !important;
+    color: white !important;
 }

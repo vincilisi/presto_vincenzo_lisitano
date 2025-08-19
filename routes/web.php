@@ -6,11 +6,11 @@ use App\Http\Controllers\RevisorController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'homepage'])
-->name('homepage');
+    ->name('homepage');
 
 Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
 
-Route::get('/article/index',[ArticleController::class, 'index'])->name('article.index');
+Route::get('/article/index', [ArticleController::class, 'index'])->name('article.index');
 
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
@@ -31,7 +31,7 @@ Route::get('/make/revisor/{user}', [RevisorController::class, 'makeRevisor'])->n
 
 Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
 
-Route::post('/lingua/{lang}',[PublicController::class, 'setLanguage'])->name('setLocale');
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
 
 
 use App\Http\Controllers\CartController;
@@ -44,4 +44,16 @@ Route::post('/cart/checkout', function () {
     return redirect()->route('cart.index')->with('successMessage', __('ui.checkoutSuccess'));
 })->name('cart.checkout');
 
+use App\Http\Controllers\ProfileController;
 
+Route::middleware('auth')->group(function () {
+    // Profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('/profile/avatar', [ProfileController::class, 'updateAvatar'])->name('profile.avatar');
+
+    // Settings
+    Route::get('/settings', [ProfileController::class, 'settings'])->name('settings');
+    Route::post('/settings/update', [ProfileController::class, 'updateSettings'])->name('settings.update');
+    Route::post('/settings/password', [ProfileController::class, 'updatePassword'])->name('settings.updatePassword');
+});

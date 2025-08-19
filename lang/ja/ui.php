@@ -1,108 +1,138 @@
 <?php
 
 return [
-    // 🔐 ログインセクション
-    'loginTitle' => 'ログイン',
-    'loginEmail' => 'メールアドレス',
-    'loginPassword' => 'パスワード',
-    'loginButton' => 'ログイン',
+  // 🔐 ログインセクション
+  'loginTitle' => 'ログイン',
+  'loginEmail' => 'メールアドレス',
+  'loginPassword' => 'パスワード',
+  'loginButton' => 'ログイン',
 
-    // 📝 登録セクション
-    'registerTitle' => '新規登録',
-    'registerName' => '名前',
-    'registerEmail' => 'メールアドレス',
-    'registerPassword' => 'パスワード',
-    'registerPasswordConfirm' => 'パスワードの確認',
-    'registerButton' => '登録する',
+  // 📝 登録セクション
+  'registerTitle' => '新規登録',
+  'registerName' => '名前',
+  'registerEmail' => 'メールアドレス',
+  'registerPassword' => 'パスワード',
+  'registerPasswordConfirm' => 'パスワードの確認',
+  'registerButton' => '登録する',
 
-    // 📄 記事詳細
-    'detailTitle' => '記事詳細',
-    'detailPrice' => '価格',
-    'detailDescription' => '説明',
-    'detailButton' => '詳細',
+  // 📄 記事詳細
+  'detailTitle' => '記事詳細',
+  'detailPrice' => '価格',
+  'detailDescription' => '説明',
+  'detailButton' => '詳細',
 
-    // 🔎 検索
-    'searchResults' => '検索結果：',
-    'searchNoResults' => '検索に一致する記事が見つかりませんでした',
-    'searchPlaceholder' => '検索',
-    'searchButton' => '検索',
+  // 🔎 検索
+  'searchResults' => '検索結果：',
+  'searchNoResults' => '検索に一致する記事が見つかりませんでした',
+  'searchPlaceholder' => '検索',
+  'searchButton' => '検索',
 
-    // 📚 記事一覧
-    'allArticles' => 'すべての記事',
-    'noArticlesGeneric' => '記事はまだ作成されていません',
-    'publishTitle' => '記事を投稿する',
-    'publishArticleTitle' => '記事を投稿する',
+  // 📚 記事一覧
+  'allArticles' => 'すべての記事',
+  'noArticlesGeneric' => '記事はまだ作成されていません',
+  'publishTitle' => '記事を投稿する',
+  'publishArticleTitle' => '記事を投稿する',
 
-    // 🗂 カテゴリー別の記事
-    'categoryArticlesTitle' => 'カテゴリーの記事',
-    'categoryNoArticles' => 'このカテゴリーにはまだ記事がありません',
-    'categoryPublishButton' => '記事を投稿する',
+  // 🗂 カテゴリー別の記事
+  'categoryArticlesTitle' => 'カテゴリーの記事',
+  'categoryNoArticles' => 'このカテゴリーにはまだ記事がありません',
+  'categoryPublishButton' => '記事を投稿する',
 
-    // 🧭 ナビゲーションバー
-    'title' => 'Presto.it',
-    'toggleNavigation' => 'ナビゲーションを切り替え',
-    'navbarHome' => 'ホーム',
-    'navbarArticles' => '記事',
-    'navbarCategories' => 'カテゴリー',
-    'navbarReviewerZone' => 'レビュアーゾーン',
-    'navbarHelloUser' => 'こんにちは、:name',
-    'navbarGuest' => 'ゲスト',
-    'navbarCreate' => '作成',
-    'navbarProfile' => 'プロフィール',
-    'navbarSettings' => '設定',
-    'navbarLogout' => 'ログアウト',
-    'navbarLogin' => 'ログイン',
-    'navbarRegister' => '新規登録',
+  // 🧭 ナビゲーションバー
+  'title' => 'Presto.it',
+  'toggleNavigation' => 'ナビゲーションを切り替え',
+  'navbarHome' => 'ホーム',
+  'navbarArticles' => '記事',
+  'navbarCategories' => 'カテゴリー',
+  'navbarReviewerZone' => 'レビュアーゾーン',
+  'navbarHelloUser' => 'こんにちは、:name',
+  'navbarGuest' => 'ゲスト',
+  'navbarCreate' => '作成',
+  'navbarProfile' => 'プロフィール',
+  'navbarSettings' => '設定',
+  'navbarLogout' => 'ログアウト',
+  'navbarLogin' => 'ログイン',
+  'navbarRegister' => '新規登録',
 
-    // 📷 画像とプレビュー
-    'photoPreview' => '画像プレビュー',
-    'imageAltArticle' => '記事「:title」の画像',
-    'placeholderImageAlt' => 'プレースホルダー画像',
-    'imageOfArticle' => '記事「:title」の画像 :num',
+  // 📷 画像とプレビュー
+  'photoPreview' => '画像プレビュー',
+  'imageAltArticle' => '記事「:title」の画像',
+  'placeholderImageAlt' => 'プレースホルダー画像',
+  'imageOfArticle' => '記事「:title」の画像 :num',
 
-    // 🧾 レビュアーダッシュボード
-    'revisorDashboard' => 'レビュアーダッシュボード',
-    'rejectButton' => '拒否',
-    'acceptButton' => '承認',
-    'author' => '著者',
-    'anonymous' => '匿名',
-    'published' => '投稿日',
-    'dateUnavailable' => '日付未定',
-    'noCategory' => 'カテゴリーなし',
-    'noArticlesToReview' => 'レビュー対象の記事はありません',
-    'backToHomepage' => 'ホームに戻る',
+  // 🧾 レビュアーダッシュボード
+  'revisorDashboard' => 'レビュアーダッシュボード',
+  'rejectButton' => '拒否',
+  'acceptButton' => '承認',
+  'author' => '著者',
+  'anonymous' => '匿名',
+  'published' => '投稿日',
+  'dateUnavailable' => '日付未定',
+  'noCategory' => 'カテゴリーなし',
+  'noArticlesToReview' => 'レビュー対象の記事はありません',
+  'backToHomepage' => 'ホームに戻る',
 
-    // 🎫 セッションメッセージ
-    'successMessage' => '操作が成功しました',
-    'errorMessage' => 'エラーが発生しました',
-    'genericMessage' => '情報メッセージ',
+  // 🎫 セッションメッセージ
+  'successMessage' => '操作が成功しました',
+  'errorMessage' => 'エラーが発生しました',
+  'genericMessage' => '情報メッセージ',
 
-    'imageOfArticle' => '記事「:title」の画像 :num',
-    'previous' => '前へ',
-    'next' => '次へ',
+  'imageOfArticle' => '記事「:title」の画像 :num',
+  'previous' => '前へ',
+  'next' => '次へ',
 
-      // 📚 記事
-    'noArticlesGeneric' => '記事はまだ作成されていません',
-    'noArticles' => '利用可能な記事はありません',
-    'publishArticle' => '記事を投稿する',
+  // 📚 記事
+  'noArticlesGeneric' => '記事はまだ作成されていません',
+  'noArticles' => '利用可能な記事はありません',
+  'publishArticle' => '記事を投稿する',
 
-    // 🦶 フッター
-    'footerReviewerTitle' => 'レビュアーになりたいですか？',
-    'footerReviewerText' => '下のボタンをクリックして申請してください',
-    'footerReviewerButton' => 'レビュアーになる',
-    'copyright' => '著作権',
+  // 🦶 フッター
+  'footerReviewerTitle' => 'レビュアーになりたいですか？',
+  'footerReviewerText' => '下のボタンをクリックして申請してください',
+  'footerReviewerButton' => 'レビュアーになる',
+  'copyright' => '著作権',
 
-    'navbarCart' => 'カート',
-    'addToCartButton' => 'カートに追加',
-    'checkoutButton' => '購入手続きへ進む',
-    'emptyCartMessage' => 'カートは空です',
+  'navbarCart' => 'カート',
+  'addToCartButton' => 'カートに追加',
+  'checkoutButton' => '購入手続きへ進む',
+  'emptyCartMessage' => 'カートは空です',
 
-    'navbarCart' => 'カート',
-    'addToCartButton' => 'カートに追加',
-    'checkoutButton' => '購入手続きへ進む',
-    'emptyCartMessage' => 'カートは空です',
-    'removedFromCart' => 'カートから商品を削除しました',
-    'addedToCart' => '商品をカートに追加しました',
-    'checkoutSuccess' => '購入が完了しました！ご注文ありがとうございます。',
+  'navbarCart' => 'カート',
+  'addToCartButton' => 'カートに追加',
+  'checkoutButton' => '購入手続きへ進む',
+  'emptyCartMessage' => 'カートは空です',
+  'removedFromCart' => 'カートから商品を削除しました',
+  'addedToCart' => '商品をカートに追加しました',
+  'checkoutSuccess' => '購入が完了しました！ご注文ありがとうございます。',
+
+  'articlesByCategory' => 'カテゴリ別記事',
+  'noArticlesForCategory' => 'このカテゴリの記事はありません',
+  'cardDetailButton' =>  '詳細',
+  'cardNoCategory' => 'カテゴリなし',
+
+  'dashboard' => 'ダッシュボード',
+  'Labels' => 'ラベル',
+  'noLabels' => 'ラベルなし',
+  'Ratings' => '評価',
+  'adult' => '成人向け',
+  'violence' => '暴力',
+  'spoof' => '風刺',
+  'racy' => '過激',
+  'medical' => '医療',
+  'refuse' => '拒否',
+  'accept' => '承認',
+  'noRevision' => 'レビューする記事はありません',
+  'backToHome' => 'ホームに戻る',
+
+  'settings' => '設定',
+  'profileSettings' => 'プロフィール情報',
+  'name' => '名前',
+  'email' => 'メールアドレス',
+  'saveChanges' => '変更を保存',
+  'changePassword' => 'パスワードを変更',
+  'currentPassword' => '現在のパスワード',
+  'newPassword' => '新しいパスワード',
+  'confirmPassword' => 'パスワードを確認',
+  'updatePassword' => 'パスワードを更新',
 
 ];
