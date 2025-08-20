@@ -134,5 +134,17 @@ return [
   'newPassword' => '新しいパスワード',
   'confirmPassword' => 'パスワードを確認',
   'updatePassword' => 'パスワードを更新',
+  "address" => "住所",
 
+
+  'profileOf'     => 'プロフィール:',
+  'avatar'        => 'アバター',
+  'updateAvatar'  => 'アバターを更新',
+  'saveProfile'   => 'プロフィールを保存',
+  'editProfile'   => 'プロフィールを編集',
+  'orderHistory'  => '注文履歴',
+  'order'         => '注文',
+  'noOrders'      => '注文はありません',
+  'viewArticle' => '記事を見る',
+  'yourArticles' => 'あなたの記事',
 ];

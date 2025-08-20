@@ -16,11 +16,24 @@
                     @csrf
                     <div class="mb-3">
                         <label for="name" class="form-label">{{ __('ui.name') }}</label>
-                        <input type="text" name="name" id="name" class="form-control" value="{{ $user->name }}">
+                        <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $user->name) }}">
+                        @error('name')
+                            <p class="text-danger fst-italic">{{ $message }}</p>
+                        @enderror
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">{{ __('ui.email') }}</label>
-                        <input type="email" name="email" id="email" class="form-control" value="{{ $user->email }}">
+                        <input type="email" name="email" id="email" class="form-control" value="{{ old('email', $user->email) }}">
+                        @error('email')
+                            <p class="text-danger fst-italic">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">{{ __('ui.address') }}</label>
+                        <input type="text" name="address" id="address" class="form-control" value="{{ old('address', $user->address) }}">
+                        @error('address')
+                            <p class="text-danger fst-italic">{{ $message }}</p>
+                        @enderror
                     </div>
                     <button type="submit" class="btn btn-dark">{{ __('ui.saveChanges') }}</button>
                 </form>

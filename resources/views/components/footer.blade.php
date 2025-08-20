@@ -36,7 +36,7 @@
     </div>
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center p-3">
       © 2025 {{ __('ui.copyright') }}:
       <a class="text-body" href="">Vincenzo Antonino Lisitano</a>
     </div>

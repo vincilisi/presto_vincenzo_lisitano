@@ -23,6 +23,8 @@ class User extends Authenticatable
         'email',
         'password',
         'is_revisor',
+        'address',
+        'avatar',
     ];
 
     /**
@@ -48,8 +50,12 @@ class User extends Authenticatable
         ];
     }
 
-    public function articles() : HasMany
+    public function articles(): HasMany
     {
         return $this->hasMany(Article::class);
+    }
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
     }
 }

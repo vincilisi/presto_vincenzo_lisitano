@@ -4,7 +4,7 @@ namespace App\Jobs;
 
 use Spatie\Image\Image;
 use Spatie\Image\Enums\Unit;
-use Spatie\Image\Enums\CropPosition;
+use Spatie\Image\Enums\WatermarkPosition;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
@@ -14,7 +14,7 @@ class ResizeImage implements ShouldQueue
 
     private $w, $h, $fileName, $path;
 
-    public function __construct($filePath, $w, $h)
+    public function __construct($filePath, $w = 30, $h = 30)
     {
         $this->path = dirname($filePath);
         $this->fileName = basename($filePath);
@@ -24,19 +24,21 @@ class ResizeImage implements ShouldQueue
 
     public function handle(): void
     {
-        $srcPath = storage_path("app/public/{$this->path}/{$this->fileName}");
-        $destFileName = "crop_{$this->w}x{$this->h}_{$this->fileName}";
-        $destPath = storage_path("app/public/{$this->path}/{$destFileName}");
+        $w = 30;
+        $h = 30;
 
-        $watermarkPath = base_path('resources/img/watermark.png');
+        $srcPath = storage_path('app/public/' . $this->path . '/' . $this->fileName);
+        $destPath = storage_path('app/public/' . $this->path . '/resized_' . $w . 'x' . $h . '_' . $this->fileName);
 
-        $image = Image::load($srcPath)
-            ->crop($this->w, $this->h, CropPosition::Center);
-
-        if (file_exists($watermarkPath)) {
-            $image->watermark($watermarkPath);
-        }
-
-        $image->save($destPath);
+        Image::load($srcPath)
+            ->resize($w, $h) // Ridimensiona l'immagine principale
+            ->watermark(
+                base_path('resources/img/watermark.png'),
+                width: 10,
+                height: 10,
+                paddingX: 1,
+                paddingY: 1,
+            )
+            ->save($destPath);
     }
 }

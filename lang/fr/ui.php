@@ -135,5 +135,16 @@ return [
     'newPassword' => 'Nouveau Mot de Passe',
     'confirmPassword' => 'Confirmer le Mot de Passe',
     'updatePassword' => 'Mettre à Jour le Mot de Passe',
+    "address" => "Adresse",
 
+    'profileOf'     => 'Profil de',
+    'avatar'        => 'Avatar',
+    'updateAvatar'  => 'Mettre à jour l’Avatar',
+    'saveProfile'   => 'Enregistrer le Profil',
+    'editProfile'   => 'Modifier le Profil',
+    'orderHistory'  => 'Historique des commandes',
+    'order'         => 'Commande',
+    'noOrders'      => 'Aucune commande disponible',
+    'viewArticle' => 'Voir l\'article',
+    'yourArticles' => 'Vos articles',
 ];

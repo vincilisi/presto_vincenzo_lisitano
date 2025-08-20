@@ -137,5 +137,18 @@ return [
     'newPassword' => 'Nuova Password',
     'confirmPassword' => 'Conferma Password',
     'updatePassword' => 'Aggiorna Password',
+    "settings" => "Impostazioni",
+    'address' => 'Indirizzo',
+
+    'profileOf'     => 'Profilo di',
+    'avatar'        => 'Avatar',
+    'updateAvatar'  => 'Aggiorna Avatar',
+    'saveProfile'   => 'Salva Profilo',
+    'editProfile'   => 'Modifica Profilo',
+    'orderHistory'  => 'Storico ordini',
+    'order'         => 'Ordine',
+    'noOrders'      => 'Nessun ordine disponibile',
+    'viewArticle' => 'Visualizza articolo',
+    'yourArticles' => 'I tuoi articoli',
 
 ];

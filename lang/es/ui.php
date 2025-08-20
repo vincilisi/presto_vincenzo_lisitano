@@ -129,5 +129,16 @@ return [
     'newPassword' => 'Nueva Contraseña',
     'confirmPassword' => 'Confirmar Contraseña',
     'updatePassword' => 'Actualizar Contraseña',
+    "address" => "Dirección",
 
+    'profileOf'     => 'Perfil de',
+    'avatar'        => 'Avatar',
+    'updateAvatar'  => 'Actualizar Avatar',
+    'saveProfile'   => 'Guardar Perfil',
+    'editProfile'   => 'Editar Perfil',
+    'orderHistory'  => 'Historial de pedidos',
+    'order'         => 'Pedido',
+    'noOrders'      => 'No hay pedidos disponibles',
+    'viewArticle' => 'Ver artículo',
+    'yourArticles' => 'Tus artículos',
 ];

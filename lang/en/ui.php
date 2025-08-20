@@ -134,5 +134,16 @@ return [
     'newPassword' => 'New Password',
     'confirmPassword' => 'Confirm Password',
     'updatePassword' => 'Update Password',
+    "address" => "Address",
 
+    'profileOf'     => 'Profile of',
+    'avatar'        => 'Avatar',
+    'updateAvatar'  => 'Update Avatar',
+    'saveProfile'   => 'Save Profile',
+    'editProfile'   => 'Edit Profile',
+    'orderHistory'  => 'Order History',
+    'order'         => 'Order',
+    'noOrders'      => 'No orders available',
+    'viewArticle' => 'View article',
+    'yourArticles' => 'Your articles',
 ];
