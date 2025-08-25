@@ -10,14 +10,14 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            'elettronica',
-            'abbigliamento',
-            'salute-e-bellezza',
-            'casa-e-giardinaggio',
-            'giocattoli',
-            'sport',
-            'accessori',
-            'motori',
+            'figurine-yokai',           // action figure e statuette
+            'maschere-tradizionali',    // maschere di oni, tengu, kitsune
+            'abiti-tradizionali',       // kimono, yukata, hakama
+            'katana-e-accessori',       // repliche di spade e oggetti da samurai
+            'oggetti-da-festival',      // lanterne, ventagli, decorazioni matsuri
+            'gioielli-folclore',        // ciondoli, amuleti, charm
+            'tazze-e-teiere',           // oggetti per tè e cerimonie
+            'poster-e-arte-tradizionale' // stampe, quadri, illustrazioni
         ];
 
         foreach ($categories as $category) {

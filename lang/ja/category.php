@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'elettronica' => '電子機器',
-    'abbigliamento' => '衣類',
-    'salute-e-bellezza' => '健康と美容',
-    'casa-e-giardinaggio' => '家庭と園芸',
-    'giocattoli' => 'おもちゃ',
-    'sport' => 'スポーツ',
-    'accessori' => 'アクセサリー',
-    'motori' => '乗り物',
+    'figurine-yokai' => '妖怪のフィギュア',
+    'maschere-tradizionali' => '伝統的な仮面',
+    'abiti-tradizionali' => '伝統的な衣装',
+    'katana-e-accessori' => '刀とアクセサリー',
+    'oggetti-da-festival' => '祭りのアイテム',
+    'gioielli-folclore' => '民俗ジュエリー',
+    'tazze-e-teiere' => 'カップと急須',
+    'poster-e-arte-tradizionale' => 'ポスターと伝統美術',
 ];

@@ -23,10 +23,7 @@
         </div>
 
         <div class="d-flex justify-content-center">
-            <div>
-                {{ $articles->links() }}
-            </div>
+            {{ $articles->links() }} {{-- ✅ Funziona solo con paginate() --}}
         </div>
     </div>
 </x-layout>
-

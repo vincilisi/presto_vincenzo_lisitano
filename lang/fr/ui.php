@@ -39,7 +39,7 @@ return [
     'categoryPublishButton' => 'Publier un article',
 
     // 🧭 Barre de navigation
-    'title' => 'Presto.it',
+    'title' => 'Les Maîtres du Soleil Levant',
     'toggleNavigation' => 'Afficher la navigation',
     'navbarHome' => 'Accueil',
     'navbarArticles' => 'Articles',

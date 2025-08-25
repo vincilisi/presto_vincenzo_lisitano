@@ -39,7 +39,7 @@ return [
     'categoryPublishButton' => 'Publicar un artículo',
 
     // 🧭 Navbar
-    'title' => 'Presto.it',
+    'title' => 'Los Maestros del Sol Naciente',
     'toggleNavigation' => 'Activar navegación',
     'navbarHome' => 'Inicio',
     'navbarArticles' => 'Artículos',

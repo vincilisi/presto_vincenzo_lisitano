@@ -41,7 +41,7 @@ return [
     'categoryPublishButton' => 'Pubblica un articolo',
 
     // 🧭 Navbar
-    'title' => 'Presto.it',
+    'title' => 'I Maestri Del Sol Levante',
     'toggleNavigation' => 'Attiva navigazione',
     'navbarHome' => 'Home',
     'navbarArticles' => 'Articoli',

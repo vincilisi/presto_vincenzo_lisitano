@@ -39,7 +39,7 @@ return [
     'categoryPublishButton' => 'Publish an article',
 
     // Navbar
-    'title' => 'Presto.it',
+    'title' => 'The Masters of the Rising Sun',
     'toggleNavigation' => 'Toggle navigation',
     'navbarHome' => 'Home',
     'navbarArticles' => 'Articles',

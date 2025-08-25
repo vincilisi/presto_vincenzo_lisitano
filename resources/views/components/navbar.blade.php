@@ -22,16 +22,18 @@
              href="{{ route('article.index') }}">{{ __('ui.navbarArticles') }}</a>
         </li>
 
+        {{-- Dropdown Categorie --}}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
             {{ __('ui.navbarCategories') }}
           </a>
           <ul class="dropdown-menu">
             @foreach ($categories as $category)
+              @php $slug = Str::slug($category->name, '-') @endphp
               <li>
                 <a class="dropdown-item text-capitalize"
                    href="{{ route('byCategory', ['category' => $category->id]) }}">
-                   {{ __('category.' . Str::slug($category->name, '-')) }}
+                   {{ __('category.' . $slug) }}
                 </a>
               </li>
               @if (! $loop->last)
@@ -76,18 +78,17 @@
               {{ __('ui.navbarHelloUser', ['name' => Auth::user()->name]) }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
-  <li><a class="dropdown-item" href="{{ route('create.article') }}">{{ __('ui.navbarCreate') }}</a></li>
-  <li><a class="dropdown-item" href="{{ route('profile') }}">{{ __('ui.navbarProfile') }}</a></li>
-  <li><a class="dropdown-item" href="{{ route('settings') }}">{{ __('ui.navbarSettings') }}</a></li>
-  <li><hr class="dropdown-divider"></li>
-  <li>
-    <a class="dropdown-item" href="#"
-       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-       {{ __('ui.navbarLogout') }}
-    </a>
-  </li>
-</ul>
-
+              <li><a class="dropdown-item" href="{{ route('create.article') }}">{{ __('ui.navbarCreate') }}</a></li>
+              <li><a class="dropdown-item" href="{{ route('profile') }}">{{ __('ui.navbarProfile') }}</a></li>
+              <li><a class="dropdown-item" href="{{ route('settings') }}">{{ __('ui.navbarSettings') }}</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item" href="#"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                   {{ __('ui.navbarLogout') }}
+                </a>
+              </li>
+            </ul>
           </li>
           <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf</form>
         @else

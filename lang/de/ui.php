@@ -39,7 +39,7 @@ return [
     'categoryPublishButton' => 'Artikel veröffentlichen',
 
     // 🧭 Navigationsleiste
-    'title' => 'Presto.it',
+    'title' => 'Die Meister der aufgehenden Sonne',
     'toggleNavigation' => 'Navigation ein-/ausblenden',
     'navbarHome' => 'Startseite',
     'navbarArticles' => 'Artikel',

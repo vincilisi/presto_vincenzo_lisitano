@@ -39,7 +39,7 @@ return [
   'categoryPublishButton' => '記事を投稿する',
 
   // 🧭 ナビゲーションバー
-  'title' => 'Presto.it',
+  'title' => '日の出の達人たち',
   'toggleNavigation' => 'ナビゲーションを切り替え',
   'navbarHome' => 'ホーム',
   'navbarArticles' => '記事',
